@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/nav_home_unclicked"
+        android:title="홈"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/menu_ranking"
+        android:enabled="true"
+        android:icon="@drawable/nav_ranking_unclicked"
+        android:title="랭킹"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_mark"
+        android:enabled="true"
+        android:icon="@drawable/nav_mark_unclicked"
+        android:title="저장"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_chat"
+        android:enabled="true"
+        android:icon="@drawable/nav_chat_unclicked"
+        android:title="채팅"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_my"
+        android:enabled="true"
+        android:icon="@drawable/nav_my_unclicked"
+        android:title="MY"
+        app:showAsAction="always" />
+
+</menu>
