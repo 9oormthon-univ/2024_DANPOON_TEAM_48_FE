@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+    
+    <ImageView
+        android:id="@+id/search_back_btn_iv"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="78dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/search_searchbar_et"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:hint="메시 통합검색"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_searchbar"
+        android:layout_marginStart="11dp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toTopOf="@id/search_back_btn_iv"
+        app:layout_constraintBottom_toBottomOf="@id/search_back_btn_iv"
+        app:layout_constraintStart_toEndOf="@id/search_back_btn_iv"/>
+    
+    <ImageView
+        android:id="@+id/search_search_btn_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_search"
+        android:layout_marginStart="12dp"
+        app:layout_constraintTop_toTopOf="@id/search_back_btn_iv"
+        app:layout_constraintBottom_toBottomOf="@id/search_back_btn_iv"
+        app:layout_constraintStart_toEndOf="@id/search_searchbar_et"/>
+
+    <ImageView
+        android:id="@+id/search_keyword_set_btn_iv"
+        android:layout_width="365dp"
+        android:layout_height="50dp"
+        android:src="@drawable/btn_search_keyword"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_searchbar_et"/>
+
+    <TextView
+        android:id="@+id/search_recent_search_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="최근 검색어"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_keyword_set_btn_iv"/>
+    
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/search_recent_search_flow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:flow_horizontalGap="8dp"
+        app:flow_verticalGap="8dp"
+        app:flow_wrapMode="chain"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/search_recent_search_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_top5_mesh_score_cl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="54dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_recent_search_flow">
+
+        <TextView
+            android:id="@+id/search_top5_mesh_score_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top5 메시스코어"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/search_top5_mesh_score_update_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11.10 22:00 기준"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/search_top5_mesh_score_title_tv"
+            app:layout_constraintBottom_toBottomOf="@id/search_top5_mesh_score_title_tv"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <ScrollView
+            android:id="@+id/search_top5_mesh_score_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/search_top5_mesh_score_title_tv">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/search_top5_mesh_score_view_btn_iv"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:src="@drawable/btn_mesh_score_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_mesh_score1_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_mesh_score_view_btn_iv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_top5_mesh_score1_profile_img_cv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score1_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="goorm"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score1_score_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1234"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_mesh_score2_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_mesh_score1_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_top5_mesh_score2_profile_img_cv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score2_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="goorm"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score2_score_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1234"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_mesh_score3_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_mesh_score2_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_top5_mesh_score3_profile_img_cv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score3_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="goorm"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score3_score_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1234"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_mesh_score4_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_mesh_score3_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_top5_mesh_score4_profile_img_cv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score4_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="goorm"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score4_score_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1234"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_mesh_score5_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_mesh_score4_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_top5_mesh_score5_profile_img_cv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score5_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="goorm"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_mesh_score5_score_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1234"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_top5_project_cl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="54dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_top5_mesh_score_cl">
+
+        <TextView
+            android:id="@+id/search_top5_project_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top5 프로젝트"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/search_top5_project_update_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11.10 22:00 기준"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/search_top5_project_title_tv"
+            app:layout_constraintBottom_toBottomOf="@id/search_top5_project_title_tv"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/search_top5_project_title_tv">
+            
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <ImageView
+                    android:id="@+id/search_top5_project_view_btn_iv"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:src="@drawable/btn_project_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_project1_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_project_view_btn_iv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    
+                    <TextView
+                        android:id="@+id/search_top5_project1_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단풍톤 같이 나가실 분!"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="13dp"
+                        android:paddingHorizontal="13dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_project1_rank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_project2_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_project1_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/search_top5_project2_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단풍톤 같이 나가실 분!"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="13dp"
+                        android:paddingHorizontal="13dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_project2_rank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_project3_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_project2_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/search_top5_project3_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단풍톤 같이 나가실 분!"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="13dp"
+                        android:paddingHorizontal="13dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_project3_rank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_project4_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_project3_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/search_top5_project4_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단풍톤 같이 나가실 분!"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="13dp"
+                        android:paddingHorizontal="13dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_project4_rank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_top5_project5_cl"
+                    android:layout_width="116dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/bg_search_item"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/search_top5_project4_cl"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/search_top5_project5_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단풍톤 같이 나가실 분!"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="13dp"
+                        android:paddingHorizontal="13dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/search_top5_project5_rank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginEnd="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+                
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
