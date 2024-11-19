@@ -39,7 +39,7 @@ dependencies {
 
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.kakao.sdk:v2-user:2.20.6")
-    implementation 'me.relex:circleindicator:2.1.6'
+    implementation libs.circleindicator
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
