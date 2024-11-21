@@ -25,6 +25,12 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchKeywordActivity"
+            android:exported="false" />
+        <activity
             android:name=".IntroActivity"
             android:exported="true">
             <intent-filter>
