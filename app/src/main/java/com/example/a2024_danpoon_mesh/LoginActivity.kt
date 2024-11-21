@@ -1,5 +1,6 @@
 package com.example.a2024_danpoon_mesh
 
+import android.graphics.Paint.UNDERLINE_TEXT_FLAG
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a2024_danpoon_mesh.databinding.ActivityLoginBinding
@@ -16,6 +17,8 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLoginKakao.setOnClickListener {
             loginKakao()
         }
+
+        binding.tvLoginAlready.paintFlags = UNDERLINE_TEXT_FLAG
     }
 
     private fun loginKakao() {

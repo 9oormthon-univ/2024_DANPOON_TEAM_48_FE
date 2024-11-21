@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._2024_Danpoon_Mesh"
         tools:targetApi="31" >
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="27d2b98d1ffc9e88ed493266aa77968b"/>
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -29,6 +32,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- 카카오 로그인, 인가 코드를 받기 위한 액티비티 -->
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="oauth"
+                    android:scheme="kakao27d2b98d1ffc9e88ed493266aa77968b" />
+            </intent-filter>
+
         </activity>
     </application>
 
