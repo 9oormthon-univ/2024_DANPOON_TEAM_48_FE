@@ -13,11 +13,11 @@
 
         <ImageView
             android:id="@+id/home_icon_iv"
-            android:layout_width="96dp"
-            android:layout_height="38dp"
-            android:background="@color/gray"
+            android:layout_width="116dp"
+            android:layout_height="46dp"
+            android:src="@drawable/ic_mesh"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -26,35 +26,23 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="21dp"
-            android:layout_marginTop="44dp"
-            android:src="@drawable/ic_report"
-            android:scaleType="center"
-            app:layout_goneMarginTop="23dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <ImageView
-            android:id="@+id/home_search_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
             android:src="@drawable/ic_search"
             android:scaleType="center"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintTop_toTopOf="@id/home_report_iv"
-            app:layout_constraintBottom_toBottomOf="@id/home_report_iv"
-            app:layout_constraintEnd_toStartOf="@id/home_report_iv"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/home_icon_iv"
+            app:layout_constraintBottom_toBottomOf="@id/home_icon_iv"/>
 
         <TextView
             android:id="@+id/home_produce_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="118dp"
+            android:layout_marginTop="57dp"
             android:text="MESH를 소개합니다!"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_icon_iv"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageView
@@ -83,7 +71,7 @@
             android:id="@+id/home_shortcut_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="바로 가기"
+            android:text="팀빌딩 시작하기"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/black"
@@ -96,7 +84,7 @@
             android:id="@+id/home_contest_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintTop_toBottomOf="@id/home_shortcut_title_tv"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp">
@@ -120,15 +108,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/home_public_contest_banner_iv"/>
 
-            <ImageView
-                android:id="@+id/home_team_build_btn_iv"
-                android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:background="@color/gray"
-                android:layout_marginTop="14dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_private_contest_banner_iv"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -175,7 +154,7 @@
 
             <TextView
                 android:id="@+id/home_top5_contest_name_tv"
-                android:layout_width="wrap_content"
+                android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:text="2024 퀀텀 챌린지(Quantom Challenge)"
                 android:textSize="14sp"
@@ -218,6 +197,15 @@
                 app:layout_constraintStart_toEndOf="@id/home_top5_contest_view_iv"
                 app:layout_constraintTop_toTopOf="@id/home_top5_contest_view_iv"
                 app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_view_iv"/>
+            
+            <ImageView
+                android:id="@+id/home_project_state1_iv"
+                android:layout_width="52dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_recruiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
 
             <ImageView
                 android:id="@+id/home_top5_contest_like_iv"
@@ -248,7 +236,7 @@
 
             <TextView
                 android:id="@+id/home_top5_contest_name_tv2"
-                android:layout_width="wrap_content"
+                android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:text="2024 퀀텀 챌린지(Quantom Challenge)"
                 android:textSize="14sp"
@@ -293,6 +281,14 @@
                 app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_view_iv2"/>
 
             <ImageView
+                android:id="@+id/home_project_state2_iv"
+                android:layout_width="52dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_recruiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
                 android:id="@+id/home_top5_contest_like_iv2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -301,6 +297,255 @@
                 app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_top5_contest_cl3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/home_top5_contest_cl2">
+
+            <ImageView
+                android:id="@+id/home_top5_contest_img_iv3"
+                android:background="@color/gray"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_name_tv3"
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:text="2024 퀀텀 챌린지(Quantom Challenge)"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv3"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_from_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양자정보연구지원센터"
+                android:textStyle="normal"
+                android:textColor="@color/font_sub"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv3"
+                app:layout_constraintTop_toBottomOf="@id/home_top5_contest_name_tv3"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_view_iv3"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_view"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="@id/home_top5_contest_from_tv3"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv3"/>
+
+            <TextView
+                android:id="@+id/home_top5_view_cnt_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:textSize="10sp"
+                android:textColor="@color/font_subsub"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_view_iv3"
+                app:layout_constraintTop_toTopOf="@id/home_top5_contest_view_iv3"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_view_iv3"/>
+
+            <ImageView
+                android:id="@+id/home_project_state3_iv"
+                android:layout_width="52dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_recruiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_like_iv3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_top5_contest_cl4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/home_top5_contest_cl3">
+
+            <ImageView
+                android:id="@+id/home_top5_contest_img_iv4"
+                android:background="@color/gray"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_name_tv4"
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:text="2024 퀀텀 챌린지(Quantom Challenge)"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv4"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_from_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양자정보연구지원센터"
+                android:textStyle="normal"
+                android:textColor="@color/font_sub"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv4"
+                app:layout_constraintTop_toBottomOf="@id/home_top5_contest_name_tv4"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_view_iv4"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_view"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="@id/home_top5_contest_from_tv4"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv4"/>
+
+            <TextView
+                android:id="@+id/home_top5_view_cnt_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:textSize="10sp"
+                android:textColor="@color/font_subsub"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_view_iv4"
+                app:layout_constraintTop_toTopOf="@id/home_top5_contest_view_iv4"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_view_iv4"/>
+
+            <ImageView
+                android:id="@+id/home_project_state4_iv"
+                android:layout_width="52dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_recruiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_like_iv4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv4"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_top5_contest_cl5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/home_top5_contest_cl4">
+
+            <ImageView
+                android:id="@+id/home_top5_contest_img_iv5"
+                android:background="@color/gray"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_name_tv5"
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:text="2024 퀀텀 챌린지(Quantom Challenge)"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv5"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_top5_contest_from_tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양자정보연구지원센터"
+                android:textStyle="normal"
+                android:textColor="@color/font_sub"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_img_iv5"
+                app:layout_constraintTop_toBottomOf="@id/home_top5_contest_name_tv5"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_view_iv5"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_view"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="@id/home_top5_contest_from_tv5"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv5"/>
+
+            <TextView
+                android:id="@+id/home_top5_view_cnt_tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:textSize="10sp"
+                android:textColor="@color/font_subsub"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/home_top5_contest_view_iv5"
+                app:layout_constraintTop_toTopOf="@id/home_top5_contest_view_iv5"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_view_iv5"/>
+
+            <ImageView
+                android:id="@+id/home_project_state5_iv"
+                android:layout_width="52dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_recruiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/home_top5_contest_like_iv5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/home_top5_contest_img_iv5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintTop_toBottomOf="@id/home_top5_contest_cl5"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
