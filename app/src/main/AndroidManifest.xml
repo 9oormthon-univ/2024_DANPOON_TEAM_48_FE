@@ -18,13 +18,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PostingDoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostingActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginAccountActivity"
             android:exported="false" />
         <activity
             android:name=".LoginSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PostingActivity"
             android:exported="false" />
         <activity
             android:name=".PostApplyActivity"
@@ -78,6 +81,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

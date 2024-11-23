@@ -15,5 +15,9 @@ class PostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.postBackBtnIv.setOnClickListener {
+            finish()
+        }
     }
 }

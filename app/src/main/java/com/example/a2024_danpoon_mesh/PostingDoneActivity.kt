@@ -2,15 +2,14 @@ package com.example.a2024_danpoon_mesh
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a2024_danpoon_mesh.databinding.ActivityPostingBinding
+import com.example.a2024_danpoon_mesh.databinding.ActivityPostDoneBinding
 
-class PostingActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityPostingBinding
+class PostingDoneActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPostDoneBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPostingBinding.inflate(layoutInflater)
+        binding = ActivityPostDoneBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 }
