@@ -42,7 +42,7 @@ dependencies {
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
 
     // 카카오 로그인
-    implementation("com.kakao.sdk:v2-user:2.20.6")
+    implementation 'com.kakao.sdk:v2-user:2.20.6'
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
