@@ -50,10 +50,21 @@
         android:id="@+id/btn_login_kakao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="182dp"
+        android:layout_marginBottom="138dp"
         android:src="@drawable/btn_login_kakao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_already_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="이미 계정이 있으신가요?"
+        android:textColor="#6B6B6B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_kakao" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -87,6 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tx_set_major" />
 
     <ImageView
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="61dp"
