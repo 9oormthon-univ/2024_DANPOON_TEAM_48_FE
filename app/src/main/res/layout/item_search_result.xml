@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/item_search_result_project_img_iv"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@drawable/bg_ranking_profile_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/item_search_content_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2024 단풍톤에 참가하실 디자이너 분 모십니다!"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_search_result_project_img_iv"
+        app:layout_constraintEnd_toStartOf="@id/item_search_result_state_iv"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
+    
+    <ImageView
+        android:id="@+id/item_search_result_state_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_recruiting"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/item_search_result_project_img_iv"
+        android:layout_marginTop="33dp"/>
+
+    <ImageView
+        android:id="@+id/item_search_result_profile_img_iv"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/bg_item_search_result_profile_img"
+        app:layout_constraintStart_toEndOf="@id/item_search_result_project_img_iv"
+        app:layout_constraintTop_toBottomOf="@id/item_search_content_tv"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="goorm"
+        android:textSize="12sp"
+        android:textColor="@color/font_sub"
+        app:layout_constraintStart_toEndOf="@id/item_search_result_profile_img_iv"
+        app:layout_constraintTop_toTopOf="@id/item_search_result_profile_img_iv"
+        app:layout_constraintBottom_toBottomOf="@id/item_search_result_profile_img_iv"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/search_result_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24.11.23 오후 14:30"
+        android:textSize="11sp"
+        android:textColor="@color/font_subsub"
+        app:layout_constraintStart_toStartOf="@id/item_search_result_profile_img_iv"
+        app:layout_constraintTop_toBottomOf="@id/item_search_result_profile_img_iv"/>
+
+    <TextView
+        android:id="@+id/search_result_view_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="조회수"
+        android:textColor="@color/font_subsub"
+        android:textSize="11sp"
+        app:layout_constraintTop_toTopOf="@id/search_result_date_tv"
+        app:layout_constraintBottom_toBottomOf="@id/search_result_date_tv"
+        app:layout_constraintStart_toEndOf="@id/search_result_date_tv"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/search_result_view_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123"
+        android:textSize="11sp"
+        android:textColor="@color/font_subsub"
+        app:layout_constraintTop_toTopOf="@id/search_result_date_tv"
+        app:layout_constraintBottom_toBottomOf="@id/search_result_date_tv"
+        app:layout_constraintStart_toEndOf="@id/search_result_view_tv"
+        android:layout_marginStart="4dp"/>
+    
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_like"
+        app:layout_constraintEnd_toEndOf="@id/item_search_result_state_iv"
+        app:layout_constraintBottom_toBottomOf="@id/search_result_date_tv"
+        app:layout_constraintTop_toTopOf="@id/search_result_date_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
