@@ -2,6 +2,7 @@ package com.example.a2024_danpoon_mesh
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLoginKakao.setOnClickListener {
             loginKakao()
+        }
+
+        binding.txAlreadyAccount.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        binding.txAlreadyAccount.setOnClickListener {
+            val intent = Intent(this, LoginAccountActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -56,8 +63,8 @@ class LoginActivity : AppCompatActivity() {
                     loginWithKakaoAccount()
                 } else {
                     Log.d("KakaoLogin", "카카오톡 로그인 성공: ${token?.accessToken}")
-                    // 로그인 성공 후 사용자 정보 받아오기
-                    getUserProfile(token?.accessToken)
+                    // 로그인 성공 시 프로필 설정 화면으로 이동하고 사용자 정보 가져오기
+                    getUserProfile()
                 }
             }
         } else {
@@ -72,44 +79,41 @@ class LoginActivity : AppCompatActivity() {
             if (error != null) {
                 Log.e("KakaoLogin", "카카오 계정 로그인 실패: $error")
             } else {
-                Log.d("KakaoLogin", "카카오 계정 로그인 성공: ${token?.accessToken}")
-                // 로그인 성공 후 사용자 정보 받아오기
-                getUserProfile(token?.accessToken)
+                token?.let {
+                    Log.d("KakaoLogin", "카카오 계정 로그인 성공: ${it.accessToken}")
+
+                    // 로그인 성공 시 프로필 설정 화면으로 이동하고 사용자 정보 가져오기
+                    // 카카오 로그인 후 받은 액세스 토큰을 Retrofit에 설정
+                    RetrofitClient.setAccessToken(it.accessToken) // 액세스 토큰 설정
+
+                    // 사용자 프로필 가져오기
+                    getUserProfile()
+                }
             }
         }
     }
 
     // 사용자 프로필 정보를 가져오는 함수
-    private fun getUserProfile(accessToken: String?) {
+    private fun getUserProfile() {
         UserApiClient.instance.me { user, error ->
             if (error != null) {
                 Log.e("KakaoLogin", "사용자 정보 가져오기 실패: $error")
             } else {
                 user?.let {
-                    // 카카오 계정으로부터 프로필과 이메일을 받아오기
-                    val nickname = it.kakaoAccount?.profile?.nickname
-                    val major =
-                        it.kakaoAccount?.profile?.nickname // 예시: major를 다른 방법으로 받거나 서버에서 받아옵니다
-
-                    // 로그로 출력
+                    // 사용자 정보가 성공적으로 가져와지면 프로필, 이메일 로그로 출력
                     Log.d("KakaoLogin", "사용자 프로필: ${it.kakaoAccount?.profile}")
                     Log.d("KakaoLogin", "사용자 이메일: ${it.kakaoAccount?.email}")
-                    Log.d("KakaoLogin", "사용자 닉네임: $nickname")
-                    Log.d("KakaoLogin", "사용자 전공: $major")
 
-                    // 서버로 전송하거나 다른 화면으로 넘길 수 있습니다
-                    navigateToProfileSetup(nickname, major)
+                    // 프로필 정보를 얻은 후 프로필 설정 화면으로 이동
+                    navigateToProfileSetup()
                 }
             }
         }
     }
 
     // 프로필 설정 화면으로 이동하는 함수
-    private fun navigateToProfileSetup(nickname: String?, major: String?) {
+    private fun navigateToProfileSetup() {
         val intent = Intent(this, ProfileSetupActivity::class.java)
-        // Intent에 nickname과 major를 추가하여 넘깁니다.
-        intent.putExtra("nickname", nickname)
-        intent.putExtra("major", major)
         startActivity(intent)
         finish() // 로그인 화면을 종료
     }
