@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a2024_danpoon_mesh.databinding.ActivityLoginBinding
-import com.example.mesh.Fragment.HomeFragment
 import com.kakao.sdk.user.UserApiClient
 import java.security.MessageDigest
 import java.util.Base64
@@ -57,8 +56,8 @@ class LoginActivity : AppCompatActivity() {
                     loginWithKakaoAccount()
                 } else {
                     Log.d("KakaoLogin", "카카오톡 로그인 성공: ${token?.accessToken}")
-                    // 로그인 성공 시 프로필 설정 화면으로 이동하고 사용자 정보 가져오기
-                    getUserProfile()
+                    // 로그인 성공 후 사용자 정보 받아오기
+                    getUserProfile(token?.accessToken)
                 }
             }
         } else {
@@ -74,33 +73,43 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("KakaoLogin", "카카오 계정 로그인 실패: $error")
             } else {
                 Log.d("KakaoLogin", "카카오 계정 로그인 성공: ${token?.accessToken}")
-                // 로그인 성공 시 프로필 설정 화면으로 이동하고 사용자 정보 가져오기
-                getUserProfile()
+                // 로그인 성공 후 사용자 정보 받아오기
+                getUserProfile(token?.accessToken)
             }
         }
     }
 
     // 사용자 프로필 정보를 가져오는 함수
-    private fun getUserProfile() {
+    private fun getUserProfile(accessToken: String?) {
         UserApiClient.instance.me { user, error ->
             if (error != null) {
                 Log.e("KakaoLogin", "사용자 정보 가져오기 실패: $error")
             } else {
                 user?.let {
-                    // 사용자 정보가 성공적으로 가져와지면 프로필, 닉네임, 이메일 로그로 출력
+                    // 카카오 계정으로부터 프로필과 이메일을 받아오기
+                    val nickname = it.kakaoAccount?.profile?.nickname
+                    val major =
+                        it.kakaoAccount?.profile?.nickname // 예시: major를 다른 방법으로 받거나 서버에서 받아옵니다
+
+                    // 로그로 출력
                     Log.d("KakaoLogin", "사용자 프로필: ${it.kakaoAccount?.profile}")
                     Log.d("KakaoLogin", "사용자 이메일: ${it.kakaoAccount?.email}")
+                    Log.d("KakaoLogin", "사용자 닉네임: $nickname")
+                    Log.d("KakaoLogin", "사용자 전공: $major")
 
-                    // 프로필 정보를 얻은 후 프로필 설정 화면으로 이동
-                    navigateToProfileSetup()
+                    // 서버로 전송하거나 다른 화면으로 넘길 수 있습니다
+                    navigateToProfileSetup(nickname, major)
                 }
             }
         }
     }
 
     // 프로필 설정 화면으로 이동하는 함수
-    private fun navigateToProfileSetup() {
+    private fun navigateToProfileSetup(nickname: String?, major: String?) {
         val intent = Intent(this, ProfileSetupActivity::class.java)
+        // Intent에 nickname과 major를 추가하여 넘깁니다.
+        intent.putExtra("nickname", nickname)
+        intent.putExtra("major", major)
         startActivity(intent)
         finish() // 로그인 화면을 종료
     }
