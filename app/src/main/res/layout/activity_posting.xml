@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".PostingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/posting_back_btn_iv"
+            android:layout_width="22dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="66dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게시물 작성"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/posting_back_btn_iv"
+            app:layout_constraintBottom_toBottomOf="@id/posting_back_btn_iv"
+            app:layout_constraintStart_toEndOf="@id/posting_back_btn_iv"
+            android:layout_marginStart="16dp"/>
+
+        <ImageView
+            android:id="@+id/posting_check_btn_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_apply_check"
+            app:layout_constraintTop_toTopOf="@id/posting_back_btn_iv"
+            app:layout_constraintBottom_toBottomOf="@id/posting_back_btn_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+        <TextView
+            android:id="@+id/posting_project_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프로젝트 정보"
+            android:textStyle="bold"
+            android:textColor="@color/font_sub"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/posting_back_btn_iv"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="49dp"/>
+
+        <LinearLayout
+            android:id="@+id/posting_project_title_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/posting_project_info_tv"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textSize="18sp"
+                android:textColor="@color/font_sub"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textStyle="bold"
+                android:textColor="@color/primary2"
+                android:textSize="18sp"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/posting_project_title_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_apply_textfield"
+            android:hint="제목을 작성해주세요."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toBottomOf="@id/posting_project_title_ll"
+            app:layout_constraintStart_toStartOf="@id/posting_project_title_ll"
+            app:layout_constraintEnd_toEndOf="@id/posting_project_title_ll"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/posting_end_date_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/posting_project_title_et"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="모집 마감 일자"
+                android:textSize="18sp"
+                android:textColor="@color/font_sub"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textStyle="bold"
+                android:textColor="@color/primary2"
+                android:textSize="18sp"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/posting_end_date_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_apply_textfield"
+            android:hint="YY/MM/DD"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toBottomOf="@id/posting_end_date_ll"
+            app:layout_constraintStart_toStartOf="@id/posting_end_date_ll"
+            app:layout_constraintEnd_toEndOf="@id/posting_end_date_ll"
+            android:layout_marginTop="16dp"/>
+        
+        <ImageView
+            android:id="@+id/posting_date_select_btn_iv"
+            android:layout_width="18dp"
+            android:layout_height="21dp"
+            android:src="@drawable/ic_date"
+            app:layout_constraintTop_toTopOf="@id/posting_end_date_et"
+            app:layout_constraintBottom_toBottomOf="@id/posting_end_date_et"
+            app:layout_constraintEnd_toEndOf="@id/posting_end_date_et"
+            android:layout_marginEnd="12dp"/>
+
+<!--        DatePicker, DatePickerDialog 로 구현-->
+
+        <TextView
+            android:id="@+id/posting_img_file_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="첨부사진"
+            android:textColor="@color/font_sub"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/posting_end_date_et"
+            app:layout_constraintStart_toStartOf="@id/posting_end_date_et"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/posting_upload_explain_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최대 3장 첨부 가능"
+            android:textSize="14sp"
+            android:textColor="@color/font_subsub"
+            app:layout_constraintStart_toStartOf="@id/posting_end_date_et"
+            app:layout_constraintTop_toBottomOf="@id/posting_img_file_tv"
+            android:layout_marginTop="8dp"/>
+        
+        <ImageView
+            android:id="@+id/posting_upload_img_iv"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/btn_img_upload"
+            app:layout_constraintStart_toStartOf="@id/posting_img_file_tv"
+            app:layout_constraintTop_toBottomOf="@id/posting_upload_explain_tv"
+            android:layout_marginTop="18dp"/>
+
+        <LinearLayout
+            android:id="@+id/posting_project_detail_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/posting_upload_img_iv"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="프로젝트 상세 정보"
+                android:textSize="18sp"
+                android:textColor="@color/font_sub"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textStyle="bold"
+                android:textColor="@color/primary2"
+                android:textSize="18sp"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/posting_project_detail_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_apply_textfield"
+            android:hint="프로젝트에 대해 설명해주세요"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toBottomOf="@id/posting_project_detail_ll"
+            app:layout_constraintStart_toStartOf="@id/posting_project_detail_ll"
+            app:layout_constraintEnd_toEndOf="@id/posting_project_detail_ll"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/posting_member_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="팀원 정보"
+            android:textColor="@color/font_sub"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/posting_project_detail_et"
+            app:layout_constraintTop_toBottomOf="@id/posting_project_detail_et"
+            android:layout_marginTop="44dp"/>
+
+        <TextView
+            android:id="@+id/posting_profit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="우대사항"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/font_sub"
+            app:layout_constraintTop_toBottomOf="@id/posting_member_info_tv"
+            app:layout_constraintStart_toStartOf="@id/posting_member_info_tv"
+            android:layout_marginTop="28dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_apply_textfield"
+            android:hint="기획"
+            app:layout_constraintTop_toBottomOf="@id/posting_profit_tv"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="24dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
