@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostApplyActivity">
+
+    <ImageView
+        android:id="@+id/post_apply_back_btn_iv"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="66dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지원하기"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/post_apply_back_btn_iv"
+        app:layout_constraintBottom_toBottomOf="@id/post_apply_back_btn_iv"
+        app:layout_constraintStart_toEndOf="@id/post_apply_back_btn_iv"
+        android:layout_marginStart="16dp"/>
+
+    <ImageView
+        android:id="@+id/post_apply_check_btn_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_apply_check"
+        app:layout_constraintTop_toTopOf="@id/post_apply_back_btn_iv"
+        app:layout_constraintBottom_toBottomOf="@id/post_apply_back_btn_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"/>
+
+    <TextView
+        android:id="@+id/post_apply_apply_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지원 정보"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/font_sub"
+        app:layout_constraintTop_toBottomOf="@id/post_apply_back_btn_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"/>
+
+    <TextView
+        android:id="@+id/post_apply_part_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지원 파트"
+        android:textColor="#ff646464"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/post_apply_apply_title_tv"
+        app:layout_constraintStart_toStartOf="@id/post_apply_apply_title_tv"
+        android:layout_marginTop="28dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textStyle="bold"
+        android:textColor="@color/primary2"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/post_apply_part_title_tv"
+        app:layout_constraintBottom_toBottomOf="@id/post_apply_part_title_tv"
+        app:layout_constraintStart_toEndOf="@id/post_apply_part_title_tv"
+        android:layout_marginStart="4dp"/>
+
+    <LinearLayout
+        android:id="@+id/post_apply_part_ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/post_apply_part_title_tv">
+        
+        <TextView
+            android:id="@+id/post_apply_part_pm_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기획"
+            android:textSize="13sp"
+            android:background="@drawable/bg_search_result_filter_unselected"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/post_apply_part_design_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="디자인"
+            android:textSize="13sp"
+            android:background="@drawable/bg_search_result_filter_unselected"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/post_apply_part_fe_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프론트엔드"
+            android:textSize="13sp"
+            android:background="@drawable/bg_search_result_filter_unselected"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/post_apply_part_be_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="백엔드"
+            android:textSize="13sp"
+            android:background="@drawable/bg_search_result_filter_unselected"
+            android:layout_marginEnd="8dp"/>
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/post_apply_comment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="팀 개설자에게 한 마디"
+        android:textSize="18sp"
+        android:textColor="@color/font_sub"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/post_apply_part_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/post_apply_part_ll"
+        android:layout_marginTop="24dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        app:layout_constraintTop_toBottomOf="@id/post_apply_comment_tv"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="팀 개설자에게 자신을 어필해 보세요!"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_apply_textfield"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/post_apply_text_cnt_tv"/>
+
+        <TextView
+            android:id="@+id/post_apply_text_cnt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/50"
+            android:textColor="@color/font_subsub"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_apply_apply_btn_cl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_apply_btn"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="49dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지원하기"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

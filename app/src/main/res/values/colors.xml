@@ -8,4 +8,7 @@
     <color name="font_main">#FF000000</color>
     <color name="font_sub">#FF495057</color>
     <color name="font_subsub">#FF6C757D</color>
+
+    <color name="primary1">#FF2960AD</color>
+    <color name="primary2">#FF1E467D</color>
 </resources>

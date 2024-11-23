@@ -15,6 +15,9 @@
         android:theme="@style/Theme._2024_Danpoon_Mesh"
         tools:targetApi="31">
         <activity
+            android:name=".PostApplyActivity"
+            android:exported="false" />
+        <activity
             android:name=".PostActivity"
             android:exported="false" />
         <activity
