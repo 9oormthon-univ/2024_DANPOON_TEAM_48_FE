@@ -4,6 +4,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("/api/v1/auth/signup/kakao")
@@ -13,6 +14,12 @@ interface ApiService {
     fun getUserProfile(
         @Header("Authorization") token: String // 액세스 토큰을 헤더로 전달
     ): Call<UserProfileResponse>
+
+    @POST("/api/v1/chat/room")
+    fun postChatRoom(
+        @Query("requesterId") requesterId: Int,
+        @Query("postId") postId: Int
+    ): Call<postChatRoomResponse>
 }
 
 data class UserProfileResponse(
