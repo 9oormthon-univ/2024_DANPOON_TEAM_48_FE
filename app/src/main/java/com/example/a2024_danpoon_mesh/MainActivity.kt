@@ -4,14 +4,14 @@ import HomeFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a2024_danpoon_mesh.databinding.ActivityMainBinding
-import com.example.mesh.Fragment.ChatFragment
+//import com.example.mesh.Fragment.ChatFragment
 import com.example.mesh.Fragment.MarkFragment
 import com.example.mesh.Fragment.MyFragment
 import com.example.mesh.Fragment.RankingFragment
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-                R.id.menu_chat -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, ChatFragment())
-                        .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
-                }
+//                R.id.menu_chat -> {
+//                    supportFragmentManager.beginTransaction()
+//                        .replace(R.id.main_frm, ChatFragment())
+//                        .commitAllowingStateLoss()
+//                    return@setOnItemSelectedListener true
+//                }
 
                 R.id.menu_my -> {
                     supportFragmentManager.beginTransaction()

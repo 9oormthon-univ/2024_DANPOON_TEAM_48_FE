@@ -12,6 +12,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="40dp"
         android:text="작성한 정보로\n프로필을 생성할까요?"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +28,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tx_dialog_title" />
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_custom_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/btn_dialog_save"
-        android:layout_width="246dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="98dp"
         android:src="@drawable/btn_profile_save"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,8 +48,8 @@
 
     <ImageView
         android:id="@+id/btn_dialog_back"
-        android:layout_width="246dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:src="@drawable/btn_back"
         app:layout_constraintEnd_toEndOf="parent"

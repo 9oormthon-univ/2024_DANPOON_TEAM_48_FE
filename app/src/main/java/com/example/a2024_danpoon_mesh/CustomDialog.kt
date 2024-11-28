@@ -9,7 +9,7 @@ class CustomDialog(private val context: Context) {
     fun showCustomAlertDialog() {
         // 커스텀 레이아웃을 인플레이트
         val inflater = LayoutInflater.from(context)
-        val dialogView = inflater.inflate(R.layout.dialog_set_profile_custom, null)
+        val dialogView = inflater.inflate(R.layout.custom_dialog_profile_setup, null)
 
         // AlertDialog 빌더를 사용해 다이얼로그 만들기
         val dialogBuilder = AlertDialog.Builder(context)

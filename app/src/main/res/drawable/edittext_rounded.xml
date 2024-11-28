@@ -5,7 +5,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
             <solid android:color="#F4F6F9" />
-            <stroke android:width="2dp" android:color="#2960AD" /> <!-- 포커스 시 테두리 색상 -->
+            <stroke android:width="2dp" android:color="@color/primary1" /> <!-- 포커스 시 테두리 색상 -->
         </shape>
     </item>
 

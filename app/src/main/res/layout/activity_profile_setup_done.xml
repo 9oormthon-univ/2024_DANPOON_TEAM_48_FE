@@ -5,41 +5,46 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFDC4C"
-    tools:context=".IntroActivity">
+    tools:context=".ProfileSetupDoneActivity">
 
-    <ImageView
-        android:id="@+id/ic_intro_mesh"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="141dp"
-        android:src="@drawable/ic_intro_mesh"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="175dp"
+        android:text="프로필 등록이 성공적으로\n완료되었습니다!"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/tx_intro_subtitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_intro_mesh" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="11dp"
-        android:src="@drawable/ic_intro_cloud"
+        android:src="@drawable/ic_success"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/tx_go_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bg_intro_mountain"
+        android:layout_marginBottom="29dp"
+        android:text="홈화면으로 바로 갈래요!"
+        android:textColor="#6B6B6B"
+        app:layout_constraintBottom_toTopOf="@+id/btn_detailed_inform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_detailed_inform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="61dp"
+        android:src="@drawable/btn_detailed_inform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

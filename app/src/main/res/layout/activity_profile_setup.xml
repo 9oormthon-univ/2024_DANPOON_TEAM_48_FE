@@ -14,6 +14,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="175dp"
         android:text="프로필을\n작성해주세요"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="닉네임 설정하기"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tx_set_profile" />
 
@@ -38,6 +39,7 @@
         android:background="@drawable/edittext_rounded"
         android:hint="닉네임을 작성해주세요."
         android:paddingStart="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tx_set_nickname" />
@@ -49,6 +51,7 @@
         android:layout_marginTop="8dp"
         android:text="4-10자 / 영문 소문자 (숫자 조합 가능)"
         android:textColor="@color/font_subsub"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/et_nickname"
         app:layout_constraintTop_toBottomOf="@+id/et_nickname" />
 
@@ -56,6 +59,7 @@
         android:id="@+id/tx_nickname_error_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text=""
         android:textColor="#2960AD"
         android:textSize="13sp"
@@ -68,11 +72,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="421dp"
         android:text="전공 설정하기"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tx_nickname_requirement" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_major"
@@ -82,9 +86,23 @@
         android:background="@drawable/edittext_rounded"
         android:hint="본인의 전공을 작성해주세요."
         android:paddingStart="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tx_set_major" />
+
+    <TextView
+        android:id="@+id/tx_major_error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:text=""
+        android:textColor="#2960AD"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_major" />
 
     <ImageView
         android:id="@+id/btn_save"
